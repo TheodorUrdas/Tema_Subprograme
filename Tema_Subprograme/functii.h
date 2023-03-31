@@ -303,11 +303,11 @@ void inserare(int v[], int& d, int p, int nou) {
 
 void Insert(int a[], int& n) {
 
-	for (int i = 0; i < n; i++) {
-		if (a[i] % 2 != 0) {
-			inserare(a, n, i + 1, a[i] * 2);
-		}
+for (int i = 0; i < n; i++) {
+	if (a[i] % 2 != 0) {
+		inserare(a, n, i + 1, a[i] * 2);
 	}
+}
 }
 
 int minim(int a[], int n, int nr) {
@@ -331,7 +331,7 @@ void FSumVecMin(int a[], int n, int m) {
 }
 
 void StergereElemente(int a[], int n, int i1, int i2) {
-	
+
 	for (int i = 0; i < n; i++) {
 		if (i >= i1 && i <= i2) {
 			stergere(a, n, i);
@@ -382,9 +382,9 @@ int sub(int a[], int n, int k) {
 }
 
 bool aparitie(int a[], int n, int k, int j) {
-	
+
 	for (int i = j + 1; i < n; i++) {
-		
+
 		if (a[i] == k) {
 			return true;
 		}
@@ -402,8 +402,18 @@ int PermD(int a[], int n) {
 	return -1;
 }
 
-int fgreater(int a[], int n, int x) {
+int Interval(int a[], int n){
+	int ct = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[i] > a[0] && a[i] <= a[n - 1]) {
+			ct++;
+		}
+	}
+	return ct;
+}
 
+int fgreater(int a[], int n, int x) {
+	
 	int xMax = 10000000;
 	for (int i = 0; i < n; i++) {
 		if (a[i] > x && a[i] < xMax) {
